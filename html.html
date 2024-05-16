@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangla Calendar with Y-Alo Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="container">
+            <header class="bangla">
+                <h1>Bangla Calendar with Y-Alo Tracker</h1>
+            </header>
+
+            <main>
+                <section class="welcome-section" id="welcome-section">
+                    <h2>Welcome, Parveen!</h2>
+                    <p>We have integrated a new period tracking feature powered by Y-Alo. Let's get started!</p>
+                    <button id="start-button">Get Started</button>
+                </section>
+
+                <section class="input-section" id="input-section" style="display: none;">
+                    <h2>Input Your Data</h2>
+                    <form id="data-form">
+                        <label for="last-period">Start Date of Last Period:</label>
+                        <input type="date" id="last-period" name="last-period" required>
+
+                        <label for="symptoms">Log Symptoms:</label>
+                        <textarea id="symptoms" name="symptoms" rows="4" placeholder="Cramps, mood swings, etc."></textarea>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div class="calendar" id="calendar"></div>
+                </section>
+
+                <section class="notification-section" id="notification-section" style="display: none;">
+                    <h2>Notification</h2>
+                    <p>Irregular pattern detected. It is recommended that you consult a gynecologist for further advice.</p>
+                    <button id="consult-button">Consult a Gynecologist</button>
+                </section>
+
+                <section class="appointment-section" id="appointment-section" style="display: none;">
+                    <h2>Book a Consultation</h2>
+                    <form id="appointment-form">
+                        <label for="doctor">Select a Gynecologist:</label>
+                        <select id="doctor" name="doctor">
+                            <option value="dr-ayesha">Dr. Ayesha Rahman</option>
+                            <option value="dr-farida">Dr. Farida Begum</option>
+                            <option value="dr-nafisa">Dr. Nafisa Khatun</option>
+                        </select>
+
+                        <label for="date">Select Date:</label>
+                        <input type="date" id="date" name="date" required>
+
+                        <button type="submit">Book Appointment</button>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            document.getElementById('welcome-section').style.display = 'none';
+            document.getElementById('input-section').style.display = 'block';
+            generateCalendar(new Date());
+        });
+
+        document.getElementById('data-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('input-section').style.display = 'none';
+            document.getElementById('notification-section').style.display = 'block';
+        });
+
+        document.getElementById('consult-button').addEventListener('click', function() {
+            document.getElementById('notification-section').style.display = 'none';
+            document.getElementById('appointment-section').style.display = 'block';
+        });
+
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Appointment booked successfully!');
+        });
+
+        function generateCalendar(date) {
+            const calendarElement = document.getElementById('calendar');
+            calendarElement.innerHTML = '';
+
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                                "July", "August", "September", "October", "November", "December"];
+            const month = date.getMonth();
+            const year = date.getFullYear();
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            const calendarHeader = document.createElement('div');
+            calendarHeader.classList.add('calendar-header');
+            calendarHeader.innerHTML = `<span>${monthNames[month]} ${year}</span>`;
+            calendarElement.appendChild(calendarHeader);
+
+            const calendarBody = document.createElement('div');
+            calendarBody.classList.add('calendar-body');
+            calendarElement.appendChild(calendarBody);
+
+            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            daysOfWeek.forEach(day => {
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('day-of-week');
+                dayElement.textContent = day;
+                calendarBody.appendChild(dayElement);
+            });
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement('div');
+                emptyCell.classList.add('day-cell');
+                calendarBody.appendChild(emptyCell);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement('div');
+                dayCell.classList.add('day-cell');
+                dayCell.textContent = day;
+                dayCell.addEventListener('click', () => {
+                    document.getElementById('last-period').value = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                });
+                calendarBody.appendChild(dayCell);
+            }
+        }
+    </script>
+</body>
+</html>
