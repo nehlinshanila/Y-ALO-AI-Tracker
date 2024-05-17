@@ -1,6 +1,6 @@
 /* styles.css */
 /* header {
-    background: url('meow.png') center center/cover;
+    background: url('m.png') center center/cover;
     color: #ffffff;
     padding: 10px 0;
     border-radius: 10px 10px 0 0;
@@ -44,17 +44,17 @@ body {
 .welcome-section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    height: 20em; /* Occupy the full height of its container */
+    justify-content: center; 
+    align-items: center; 
+    height: 20em;
 }
 
 .bangla{
     background: linear-gradient(90deg, #FFA98D, #FF90BC);
     display: flex;
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    height: 4em; /* Occupy the full height of its container */
+    justify-content: center; 
+    align-items: center; 
+    height: 4em; 
 }
 .container {
     width: 100%;
