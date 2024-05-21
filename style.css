@@ -1,0 +1,534 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ebf3cf;
+}
+
+.phone-frame {
+    width: 375px;
+    height: 667px;
+    border: 16px solid #000;
+    border-radius: 36px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: white;
+}
+
+.phone-frame::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: #333;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+header {
+    background-color: #cd65a5;
+    color: white;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: auto;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.startbutton {
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #c682b8;
+}
+
+.menu-button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.pagetwo {
+    top: 100px;
+}
+
+#app-logo {
+    width: 250px;
+    margin: 20px 0;
+}
+
+.back-button {
+    padding: 10px 20px;
+    margin: 10px auto;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.back-button:hover {
+    background-color: #c682b8;
+}
+
+.bottom-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c12d88;
+    padding: 10px;
+}
+
+.menu-button-bottom {
+    flex: 1;
+    padding: 10px 0;
+    margin: 0 5px;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-button-bottom:hover {
+    background-color: #c682b8;
+}
+
+#menu-page {
+    background-color: #f7bce2; /* New background color for the second page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.input-section {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.input-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.infoenter{
+    font-size: larger;
+}
+
+.input-section label,
+.input-section input,
+.input-section textarea,
+.input-section button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input-section button {
+    align-self: center;
+}
+
+.calendar {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x:auto;
+    align-items: baseline;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-of-week,
+.day-cell {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.day-cell {
+    cursor: pointer;
+}
+
+.day-cell:hover {
+    background-color: #f0f0f0;
+}
+
+.notify{
+    font-size: large;
+}
+
+.back-button2 {
+    padding: 10px 20px;
+    margin: 10px auto;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 40%;
+    ;
+}
+
+.back-button2:hover {
+    background-color: #c682b8;
+}
+
+
+.appointment-section {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.appointment-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    margin-bottom: 50px auto;
+}
+
+.bookenter{
+    font-size: medium;
+}
+
+.appointment-section label,
+.appointment-section input,
+.appointment-section select {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.appointment-section button {
+    align-self: center;
+}
+
+.doctorchoose{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.doctorname{
+    width: 100%;
+    font-size: large;
+}
+
+.dateenter{
+    margin-top: 20px;
+}
+
+.bookapp{
+    margin: 50px auto;
+    
+}
+
+
+/* CSS styles */
+
+/* Modal styles */
+.modal-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Ensure modal is on top of other content */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 20% auto; /* Adjust this value to center the modal vertically */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px; /* Limit maximum width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow */
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.alertmsg{
+    font-style: italic;
+    color: rgb(224, 31, 31);
+    margin-top: 20px auto;
+    padding: 50px;
+}
+
+/* CSS styles */
+
+/* User advice page styles */
+#user-advice-page {
+    padding: 20px;
+}
+
+#user-advice-page header {
+    background-color: #cd65a5;
+    color: white;
+    padding: 10px 20px;
+}
+
+#user-advice-page .user-advice-content {
+    margin-top: 20px;
+}
+
+#user-advice-page h3 {
+    margin-bottom: 10px;
+}
+
+#user-advice-page textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+#user-advice-page button.back-button {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+    font-family: Arial, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ebf3cf;
+}
+
+.phone-frame {
+    width: 375px;
+    height: 667px;
+    border: 16px solid #000;
+    border-radius: 36px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: white;
+}
+
+.phone-frame::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: #333;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #cd65a5;
+    color: white;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.startbutton{
+    font-size: 20px;
+}
+/*
+.menu-button{
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.pagetwo{
+    color: #cd65a5;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+    
+    top: 100px;
+}
+
+
+button:hover {
+    background-color: #c682b8;
+}
+
+.menu-button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+}
+
+#app-logo {
+    width: 250px;
+    margin: 20px 0;
+}
+
+.back-button {
+    padding: 10px 20px;
+    margin: 10px auto;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.back-button:hover {
+    background-color: #c682b8;
+}
+
+.bottom-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c12d88;
+    padding: 10px;
+}
+
+.menu-button-bottom {
+    flex: 1;
+    padding: 10px 0;
+    margin: 0 5px;
+    border: none;
+    background-color: #512a50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-button-bottom:hover {
+    background-color: #c682b8;
+}*/
+
+
