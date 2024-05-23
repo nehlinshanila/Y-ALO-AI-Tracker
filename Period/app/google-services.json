@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1025764919284",
+    "firebase_url": "https://y-alo-d68c0-default-rtdb.firebaseio.com",
+    "project_id": "y-alo-d68c0",
+    "storage_bucket": "y-alo-d68c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025764919284:android:f2aab144d036e1628fdba1",
+        "android_client_info": {
+          "package_name": "com.example.period"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp244x2xaFP-un_YT_eAIbcwNEd15P-RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025764919284:android:f47a1f853db501dd8fdba1",
+        "android_client_info": {
+          "package_name": "com.example.y_alo_tracker_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp244x2xaFP-un_YT_eAIbcwNEd15P-RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025764919284:android:55e601cefa2dc9fd8fdba1",
+        "android_client_info": {
+          "package_name": "com.yourcompany.yalo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp244x2xaFP-un_YT_eAIbcwNEd15P-RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

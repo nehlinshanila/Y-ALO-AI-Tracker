@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="welcome_to">WELCOME TO</string>
+    <string name="app">APPLICATION</string>
+    <string name="register">Register</string>
+    <string name="log_period">Log Period</string>
+    <string name="more_options">More Options</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="view_cycle_info">View Cycle Info</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="full_name">Full Name</string>
+    <string name="period_logged">Period logged for the selected date.</string>
+    <string name="select_date_first">Please select a date first.</string>
+    <string name="location">Location</string>
+    <string name="change_name">Change Name</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
