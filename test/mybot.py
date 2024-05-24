@@ -2,7 +2,7 @@ from typing import Final
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
-TOKEN: Final = '7023708802:AAEwGyDpcL4Uvgb9QGK_H5YQUn11L0KuZSc'
+# TOKEN: Final = '7023708802:AAEwGyDpcL4Uvgb9QGK_H5YQUn11L0KuZSc'
 BOT_USERNAME: Final = 'YAlo_tracker_bot'
 
 # COMMANDS

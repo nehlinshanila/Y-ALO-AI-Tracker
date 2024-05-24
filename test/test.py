@@ -10,7 +10,7 @@ import calendar
 cred = credentials.Certificate("key.json")
 firebase_admin.initialize_app(cred)
 
-TOKEN: Final = '7023708802:AAEwGyDpcL4Uvgb9QGK_H5YQUn11L0KuZSc'
+# TOKEN: Final = '7023708802:AAEwGyDpcL4Uvgb9QGK_H5YQUn11L0KuZSc'
 BOT_USERNAME: Final = 'YAlo_tracker_bot'
 
 # Helper function to create a calendar
