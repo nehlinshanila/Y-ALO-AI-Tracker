@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1074944002389",
+    "project_id": "y-alo-4d6f6",
+    "storage_bucket": "y-alo-4d6f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074944002389:android:a1403e55547e5abdb807dc",
+        "android_client_info": {
+          "package_name": "com.example.period"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJe9i6w2no3bxeaov5iOeiT-BWLPvbxlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
