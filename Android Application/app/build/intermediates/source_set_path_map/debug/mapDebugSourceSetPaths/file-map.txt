@@ -1,0 +1,62 @@
+com.example.period.app-fragment-ktx-1.6.2-0 C:\Users\nehli\.gradle\caches\transforms-4\141fc87d227437de4bf02fee29200237\transformed\fragment-ktx-1.6.2\res
+com.example.period.app-navigation-runtime-ktx-2.7.7-1 C:\Users\nehli\.gradle\caches\transforms-4\153a3abe11ddff1b7c24e21f982a605e\transformed\navigation-runtime-ktx-2.7.7\res
+com.example.period.app-lifecycle-runtime-release-2 C:\Users\nehli\.gradle\caches\transforms-4\15e60b5d0dbc7420bbff3a9e03c18ec4\transformed\lifecycle-runtime-release\res
+com.example.period.app-lifecycle-livedata-ktx-2.8.0-3 C:\Users\nehli\.gradle\caches\transforms-4\17e1e33d571e52b6f2d614ff17e26bdd\transformed\lifecycle-livedata-ktx-2.8.0\res
+com.example.period.app-recyclerview-1.1.0-4 C:\Users\nehli\.gradle\caches\transforms-4\1cb2d370179882ccd6cb50ca0e9898aa\transformed\recyclerview-1.1.0\res
+com.example.period.app-lifecycle-runtime-ktx-release-5 C:\Users\nehli\.gradle\caches\transforms-4\1ea61701c27eb3fb4153e9376f420a6b\transformed\lifecycle-runtime-ktx-release\res
+com.example.period.app-activity-1.8.0-6 C:\Users\nehli\.gradle\caches\transforms-4\1fc93ce05db4e9b6959b523d2d432b28\transformed\activity-1.8.0\res
+com.example.period.app-emoji2-views-helper-1.2.0-7 C:\Users\nehli\.gradle\caches\transforms-4\21369c0ad70367925e932a98d7207612\transformed\emoji2-views-helper-1.2.0\res
+com.example.period.app-activity-ktx-1.8.0-8 C:\Users\nehli\.gradle\caches\transforms-4\2837f11b126a8d2c44e44fc418e0d095\transformed\activity-ktx-1.8.0\res
+com.example.period.app-cardview-1.0.0-9 C:\Users\nehli\.gradle\caches\transforms-4\2b7e7fe049be27c17cdc2ceb0ea50f40\transformed\cardview-1.0.0\res
+com.example.period.app-savedstate-1.2.1-10 C:\Users\nehli\.gradle\caches\transforms-4\3056cc06d9d0f3a5646cf28b8c9accb3\transformed\savedstate-1.2.1\res
+com.example.period.app-play-services-basement-18.3.0-11 C:\Users\nehli\.gradle\caches\transforms-4\3106a411d19e1ab1f72c27db7602b6c9\transformed\play-services-basement-18.3.0\res
+com.example.period.app-lifecycle-process-2.8.0-12 C:\Users\nehli\.gradle\caches\transforms-4\32de5c341fe0d7cdbd1068918e03f7da\transformed\lifecycle-process-2.8.0\res
+com.example.period.app-play-services-auth-20.7.0-13 C:\Users\nehli\.gradle\caches\transforms-4\346296d0cec80037f8909b713a24f0c0\transformed\play-services-auth-20.7.0\res
+com.example.period.app-startup-runtime-1.1.1-14 C:\Users\nehli\.gradle\caches\transforms-4\3d01906293cad68d6ef63db701f11180\transformed\startup-runtime-1.1.1\res
+com.example.period.app-lifecycle-viewmodel-release-15 C:\Users\nehli\.gradle\caches\transforms-4\3f896a7386d7241e54fbf6a47d2dfceb\transformed\lifecycle-viewmodel-release\res
+com.example.period.app-navigation-fragment-2.7.7-16 C:\Users\nehli\.gradle\caches\transforms-4\4730e4097f3432f60e30d879e79a2971\transformed\navigation-fragment-2.7.7\res
+com.example.period.app-credentials-1.2.0-rc01-17 C:\Users\nehli\.gradle\caches\transforms-4\4a27af4d7aeb481cd53c2748a40e5ff1\transformed\credentials-1.2.0-rc01\res
+com.example.period.app-lifecycle-livedata-core-ktx-2.8.0-18 C:\Users\nehli\.gradle\caches\transforms-4\52033e9bfb94672bd546d4e4595028f6\transformed\lifecycle-livedata-core-ktx-2.8.0\res
+com.example.period.app-navigation-fragment-ktx-2.7.7-19 C:\Users\nehli\.gradle\caches\transforms-4\594ce278ef2304a2943617fc13826e7b\transformed\navigation-fragment-ktx-2.7.7\res
+com.example.period.app-core-ktx-1.13.1-20 C:\Users\nehli\.gradle\caches\transforms-4\5ad7edbca52c30e42348fdf95a212ea9\transformed\core-ktx-1.13.1\res
+com.example.period.app-window-1.0.0-21 C:\Users\nehli\.gradle\caches\transforms-4\6151edac7df67cccd62df79c26f53f65\transformed\window-1.0.0\res
+com.example.period.app-ads-adservices-java-1.0.0-beta05-22 C:\Users\nehli\.gradle\caches\transforms-4\6a5d24d0daf59a446d7e9f26ec49fadd\transformed\ads-adservices-java-1.0.0-beta05\res
+com.example.period.app-core-runtime-2.2.0-23 C:\Users\nehli\.gradle\caches\transforms-4\6d968f3c7162e97331f39218dceb623d\transformed\core-runtime-2.2.0\res
+com.example.period.app-navigation-ui-ktx-2.7.7-24 C:\Users\nehli\.gradle\caches\transforms-4\6fccaac3c98de637bad32fc75960f2d4\transformed\navigation-ui-ktx-2.7.7\res
+com.example.period.app-savedstate-ktx-1.2.1-25 C:\Users\nehli\.gradle\caches\transforms-4\7e582d69a5024c7bb4ea03e625cb348f\transformed\savedstate-ktx-1.2.1\res
+com.example.period.app-emoji2-1.2.0-26 C:\Users\nehli\.gradle\caches\transforms-4\814f1f80c33283721bdf29978dce7121\transformed\emoji2-1.2.0\res
+com.example.period.app-slidingpanelayout-1.2.0-27 C:\Users\nehli\.gradle\caches\transforms-4\86b6dfe4ec40d9ffccfd2e35703fbc49\transformed\slidingpanelayout-1.2.0\res
+com.example.period.app-play-services-base-18.1.0-28 C:\Users\nehli\.gradle\caches\transforms-4\907d04a06ac36e7bfa01c03177ceda82\transformed\play-services-base-18.1.0\res
+com.example.period.app-browser-1.4.0-29 C:\Users\nehli\.gradle\caches\transforms-4\91ff6dc64a5b5e24a3437caf20cf82d3\transformed\browser-1.4.0\res
+com.example.period.app-navigation-ui-2.7.7-30 C:\Users\nehli\.gradle\caches\transforms-4\97ce96081e4c643f87a119cd63bfc24d\transformed\navigation-ui-2.7.7\res
+com.example.period.app-lifecycle-livedata-core-2.8.0-31 C:\Users\nehli\.gradle\caches\transforms-4\a1f7ff5fbfa30620a59f0678fdb22033\transformed\lifecycle-livedata-core-2.8.0\res
+com.example.period.app-material-1.12.0-32 C:\Users\nehli\.gradle\caches\transforms-4\a2eb75d0f0f0b83ff971eb34773af90e\transformed\material-1.12.0\res
+com.example.period.app-ads-adservices-1.0.0-beta05-33 C:\Users\nehli\.gradle\caches\transforms-4\a3c831a4b8e31cb9bf6b7646e99b0bfd\transformed\ads-adservices-1.0.0-beta05\res
+com.example.period.app-core-1.13.1-34 C:\Users\nehli\.gradle\caches\transforms-4\ab061bde9a067fe03b65f6e34c4faf17\transformed\core-1.13.1\res
+com.example.period.app-appcompat-resources-1.6.1-35 C:\Users\nehli\.gradle\caches\transforms-4\ad772e4387a7e1206529670482fe475f\transformed\appcompat-resources-1.6.1\res
+com.example.period.app-profileinstaller-1.3.1-36 C:\Users\nehli\.gradle\caches\transforms-4\ad8a968049452522b3c92bdbb6a9080e\transformed\profileinstaller-1.3.1\res
+com.example.period.app-play-services-measurement-api-22.0.0-37 C:\Users\nehli\.gradle\caches\transforms-4\ada4798a60ff216c934f3fd0631a625f\transformed\play-services-measurement-api-22.0.0\res
+com.example.period.app-coordinatorlayout-1.1.0-38 C:\Users\nehli\.gradle\caches\transforms-4\ba6fc8eed7440495d059b1de7ca71a4e\transformed\coordinatorlayout-1.1.0\res
+com.example.period.app-transition-1.5.0-39 C:\Users\nehli\.gradle\caches\transforms-4\bb55912cacc5c6795a0d8b1497d9c378\transformed\transition-1.5.0\res
+com.example.period.app-firebase-common-21.0.0-40 C:\Users\nehli\.gradle\caches\transforms-4\c445f973254e8d47cd44f9a407b67b7a\transformed\firebase-common-21.0.0\res
+com.example.period.app-credentials-play-services-auth-1.2.0-rc01-41 C:\Users\nehli\.gradle\caches\transforms-4\c51048bb8600cdb16baec68b2df08cbc\transformed\credentials-play-services-auth-1.2.0-rc01\res
+com.example.period.app-lifecycle-viewmodel-ktx-2.8.0-42 C:\Users\nehli\.gradle\caches\transforms-4\c5413368c9c32bdc847189d9c1769af7\transformed\lifecycle-viewmodel-ktx-2.8.0\res
+com.example.period.app-navigation-runtime-2.7.7-43 C:\Users\nehli\.gradle\caches\transforms-4\c8ea9da8e34ac3516dc522b0544ec01f\transformed\navigation-runtime-2.7.7\res
+com.example.period.app-drawerlayout-1.1.1-44 C:\Users\nehli\.gradle\caches\transforms-4\ca1f9ff7aad8514e050d22855a3e1a5e\transformed\drawerlayout-1.1.1\res
+com.example.period.app-viewpager2-1.0.0-45 C:\Users\nehli\.gradle\caches\transforms-4\cbf3f971617d94b851a2c6fb8dd30b91\transformed\viewpager2-1.0.0\res
+com.example.period.app-navigation-common-2.7.7-46 C:\Users\nehli\.gradle\caches\transforms-4\d017abf36bf0511ade09ec825a1d6c96\transformed\navigation-common-2.7.7\res
+com.example.period.app-fragment-1.6.2-47 C:\Users\nehli\.gradle\caches\transforms-4\d25cd5f0d77c595c5698a5da6abe94d2\transformed\fragment-1.6.2\res
+com.example.period.app-appcompat-1.6.1-48 C:\Users\nehli\.gradle\caches\transforms-4\d55ab43ba0f0321de886fb170774e4c8\transformed\appcompat-1.6.1\res
+com.example.period.app-lifecycle-viewmodel-savedstate-2.8.0-49 C:\Users\nehli\.gradle\caches\transforms-4\dab761b808c057d5d134ebc7d6eb2aab\transformed\lifecycle-viewmodel-savedstate-2.8.0\res
+com.example.period.app-lifecycle-livedata-2.8.0-50 C:\Users\nehli\.gradle\caches\transforms-4\e124adefca894da764811612681b715c\transformed\lifecycle-livedata-2.8.0\res
+com.example.period.app-navigation-common-ktx-2.7.7-51 C:\Users\nehli\.gradle\caches\transforms-4\e224e8512482018abf48362c114a8fe3\transformed\navigation-common-ktx-2.7.7\res
+com.example.period.app-constraintlayout-2.1.4-52 C:\Users\nehli\.gradle\caches\transforms-4\e58d1ebacbcd4404e9dd9a5289110ef6\transformed\constraintlayout-2.1.4\res
+com.example.period.app-annotation-experimental-1.4.0-53 C:\Users\nehli\.gradle\caches\transforms-4\f1b8a9ca3c57200fcba29d2c5f79ee4b\transformed\annotation-experimental-1.4.0\res
+com.example.period.app-pngs-54 D:\CSE\hackathon\Android Application\app\build\generated\res\pngs\debug
+com.example.period.app-res-55 D:\CSE\hackathon\Android Application\app\build\generated\res\processDebugGoogleServices
+com.example.period.app-resValues-56 D:\CSE\hackathon\Android Application\app\build\generated\res\resValues\debug
+com.example.period.app-packageDebugResources-57 D:\CSE\hackathon\Android Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.period.app-packageDebugResources-58 D:\CSE\hackathon\Android Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.period.app-debug-59 D:\CSE\hackathon\Android Application\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.period.app-debug-60 D:\CSE\hackathon\Android Application\app\src\debug\res
+com.example.period.app-main-61 D:\CSE\hackathon\Android Application\app\src\main\res

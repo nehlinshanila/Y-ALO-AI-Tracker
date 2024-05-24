@@ -1,141 +1,193 @@
-# from typing import Final
-# from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-# from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
-# import datetime
-# import calendar
+import firebase_admin
+from firebase_admin import credentials, firestore
+from typing import Final
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
+from datetime import datetime, timedelta
+import calendar
 
-# TOKEN: Final = '--token'  # Replace with your actual Telegram bot token
+# Initialize Firebase with the service account key file
+cred = credentials.Certificate("key.json")
+firebase_admin.initialize_app(cred)
 
-# # ============================
-# # COMMAND HANDLERS
-# # ============================
+TOKEN: Final = '7023708802:AAEwGyDpcL4Uvgb9QGK_H5YQUn11L0KuZSc'
+BOT_USERNAME: Final = 'YAlo_tracker_bot'
 
-# # Start command handler
-# async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     keyboard = [
-#         [InlineKeyboardButton("🌸 Set Period Date 🌸", callback_data='set_period')],
-#         [InlineKeyboardButton("🌸 Get Advice 🌸", callback_data='get_advice')]
-#     ]
-#     reply_markup = InlineKeyboardMarkup(keyboard)
-#     await update.message.reply_text(
-#         "🌸 স্বাগতম! এটি আপনার মাসিক চক্র ট্র্যাক করার জন্য একটি নিরাপদ স্থান। 🌸\n\nPlease choose an option:",
-#         reply_markup=reply_markup
-#     )
+# Helper function to create a calendar
+def create_calendar(year: int, month: int) -> InlineKeyboardMarkup:
+    keyboard = []
 
-# # Generate inline keyboard for calendar
-# def create_calendar(year, month):
-#     cal = calendar.Calendar()
-#     month_days = cal.monthdayscalendar(year, month)
+    # First row - Month and Year
+    keyboard.append([InlineKeyboardButton(f'{calendar.month_name[month]} {year}', callback_data='ignore')])
 
-#     keyboard = []
-#     # Add week days header
-#     keyboard.append([
-#         InlineKeyboardButton("Mon", callback_data="ignore"),
-#         InlineKeyboardButton("Tue", callback_data="ignore"),
-#         InlineKeyboardButton("Wed", callback_data="ignore"),
-#         InlineKeyboardButton("Thu", callback_data="ignore"),
-#         InlineKeyboardButton("Fri", callback_data="ignore"),
-#         InlineKeyboardButton("Sat", callback_data="ignore"),
-#         InlineKeyboardButton("Sun", callback_data="ignore")
-#     ])
+    # Second row - Weekdays
+    days_of_week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    keyboard.append([InlineKeyboardButton(day, callback_data='ignore') for day in days_of_week])
 
-#     # Add day buttons
-#     for week in month_days:
-#         week_buttons = []
-#         for day in week:
-#             if day == 0:
-#                 week_buttons.append(InlineKeyboardButton(" ", callback_data="ignore"))
-#             else:
-#                 week_buttons.append(InlineKeyboardButton(str(day), callback_data=f"day_{day}_{month}_{year}"))
-#         keyboard.append(week_buttons)
+    # Calendar rows
+    month_calendar = calendar.monthcalendar(year, month)
+    for week in month_calendar:
+        row = []
+        for day in week:
+            if day == 0:
+                row.append(InlineKeyboardButton(' ', callback_data='ignore'))
+            else:
+                row.append(InlineKeyboardButton(str(day), callback_data=f'select_date_{year}-{month:02d}-{day:02d}'))
+        keyboard.append(row)
 
-#     # Add navigation buttons
-#     keyboard.append([
-#         InlineKeyboardButton("<", callback_data=f"prev_month_{month}_{year}"),
-#         InlineKeyboardButton(">", callback_data=f"next_month_{month}_{year}")
-#     ])
+    # Last row - Navigation
+    prev_month = month - 1 if month > 1 else 12
+    next_month = month + 1 if month < 12 else 1
+    prev_year = year if month > 1 else year - 1
+    next_year = year if month < 12 else year + 1
+    keyboard.append([
+        InlineKeyboardButton('<', callback_data=f'change_month_{prev_year}_{prev_month}'),
+        InlineKeyboardButton('>', callback_data=f'change_month_{next_year}_{next_month}')
+    ])
 
-#     return InlineKeyboardMarkup(keyboard)
+    return InlineKeyboardMarkup(keyboard)
 
-# # Callback query handler
-# async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     query = update.callback_query
-#     await query.answer()
-#     data = query.data
+# COMMANDS
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await send_welcome_message(update)
 
-#     if data == 'set_period':
-#         year, month = datetime.datetime.now().year, datetime.datetime.now().month
-#         reply_markup = create_calendar(year, month)
-#         await query.message.edit_text('🌸 Please select the date to log your period: 🌸', reply_markup=reply_markup)
-#     elif data == 'get_advice':
-#         await query.message.edit_text('🌸 You can ask for health advice here. Please type your question. 🌸')
-#     elif data.startswith("day_"):
-#         day, month, year = map(int, data.split("_")[1:])
-#         date_logged = datetime.datetime(year, month, day).strftime('%Y-%m-%d')
-#         await query.message.edit_text(f"🌸 Period date logged: {date_logged} 🌸")
-#     elif data.startswith("prev_month_") or data.startswith("next_month_"):
-#         _, month, year = map(int, data.split("_")[2:])
-#         if "prev_month" in data:
-#             month -= 1
-#             if month == 0:
-#                 month = 12
-#                 year -= 1
-#         elif "next_month" in data:
-#             month += 1
-#             if month == 13:
-#                 month = 1
-#                 year += 1
-#         reply_markup = create_calendar(year, month)
-#         await query.message.edit_text('🌸 Please select the date to log your period: 🌸', reply_markup=reply_markup)
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await send_welcome_message(update)
 
-# # Message handler
-# async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     text = update.message.text
-#     if validate_date(text):
-#         date = datetime.datetime.strptime(text, '%Y-%m-%d')
-#         next_period_date = date + datetime.timedelta(days=28)  # assuming a 28-day cycle
-#         response = f"🌸 Your next period is expected around {next_period_date.strftime('%Y-%m-%d')}. 🌸"
-#     else:
-#         response = "🌸 Please enter a valid date in YYYY-MM-DD format. 🌸"
-#     await update.message.reply_text(response)
+async def send_welcome_message(update: Update):
+    welcome_text_en = "Hello, Welcome to the Y-Alo period tracker app! Please choose your language to continue."
+    welcome_text_bn = "Y-Alo পিরিয়ড ট্র্যাকার অ্যাপে আপনাকে স্বাগতম! চালিয়ে যেতে আপনার ভাষা চয়ন করুন।"
+    combined_text = f"{welcome_text_en}\n\n{welcome_text_bn}"
+    
+    keyboard = [
+        [
+            InlineKeyboardButton("English", callback_data='lang_en'),
+            InlineKeyboardButton("বাংলা", callback_data='lang_bn')
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    await update.message.reply_text(combined_text, reply_markup=reply_markup)
 
-# # ============================
-# # UTILITY FUNCTIONS
-# # ============================
+async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()  # Acknowledge the callback query
+    
+    if query.data == 'lang_en':
+        await send_english_options(query)
+    elif query.data == 'lang_bn':
+        await query.edit_message_text("আপনি বাংলা নির্বাচন করেছেন। আমি কীভাবে আপনাকে সাহায্য করতে পারি?")
+    elif query.data == 'track_period':
+        await send_date_picker(query)
+    elif query.data == 'book_appointment':
+        await book_appointment(query)
+    elif 'book_dr_' in query.data:
+        doctor_name = query.data.split('book_dr_')[1]
+        await handle_doctor_selection(query, doctor_name)
+    elif 'change_month_' in query.data:
+        await change_month(query)
+    elif 'select_date_' in query.data:
+        selected_date = query.data.split('select_date_')[1]
+        await log_selected_date(query, selected_date)
 
-# # Validate date function
-# def validate_date(date_text: str) -> bool:
-#     try:
-#         datetime.datetime.strptime(date_text, '%Y-%m-%d')
-#         return True
-#     except ValueError:
-#         return False
+async def send_english_options(query):
+    text = "Thank you for using Y-Alo tracker. Please let us know what we may help you with today."
+    keyboard = [
+        [
+            InlineKeyboardButton("Track my period date", callback_data='track_period'),
+        ],
+        [
+            InlineKeyboardButton("Book an appointment", callback_data='book_appointment'),
+        ],
+        [
+            InlineKeyboardButton("Give me advice", callback_data='give_advice'),
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    await query.edit_message_text(text, reply_markup=reply_markup)
 
-# # Error handler
-# async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     print(f'Update {update} caused error {context.error}')
+async def send_date_picker(query):
+    today = datetime.now()
+    await query.edit_message_text('Please select the date to log your period:', reply_markup=create_calendar(today.year, today.month))
 
-# # ============================
-# # MAIN APPLICATION SETUP
-# # ============================
+async def change_month(query):
+    # Splitting the query data
+    parts = query.data.split('_')
+    if len(parts) == 3:  # Ensure there are exactly three parts
+        _, year, month = parts
+        # Convert year and month to integers
+        year = int(year)
+        month = int(month)
+        # Calculate previous month
+        prev_month = month - 1 if month > 1 else 12
+        prev_year = year if month > 1 else year - 1
+        # Create calendar for previous month
+        await query.edit_message_text('Please select the date to log your period:', reply_markup=create_calendar(prev_year, prev_month))
+    else:
+        print("Invalid query data format")
 
-# if __name__ == '__main__':
-#     app = Application.builder().token(TOKEN).read_timeout(20).write_timeout(20).build()
+async def log_selected_date(query, selected_date):
+    # Parse the selected date
+    selected_date_obj = datetime.strptime(selected_date, '%Y-%m-%d')
+    
+    # Calculate the next period date by adding 28 days
+    next_period_date = selected_date_obj + timedelta(days=28)
+    next_period_date_str = next_period_date.strftime('%Y-%m-%d')
 
-#     # Command handlers
-#     app.add_handler(CommandHandler('start', start_command))
-#     app.add_handler(CommandHandler('help', handle_message))
-#     app.add_handler(CommandHandler('custom', handle_message))
+    # Send message indicating the last period date is logged
+    text = f"Your last period date is now logged in: {selected_date}"
+    await query.edit_message_text(text)
 
-#     # Message handlers
-#     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    # Store the last period date in Firebase
+    user_id = query.from_user.id  # Assuming each user has a unique Telegram ID
+    await store_period_date_in_firebase(user_id, selected_date)
 
-#     # Callback query handler
-#     app.add_handler(CallbackQueryHandler(handle_callback))
+    # Calculate and send message indicating the next period date
+    next_period_text = f"Your next period date is estimated to be on: {next_period_date_str}"
+    await query.message.reply_text(next_period_text)
 
-#     # Error handler
-#     app.add_error_handler(error)
+async def store_period_date_in_firebase(user_id, period_date):
+    db = firestore.client()
+    doc_ref = db.collection('users').document(str(user_id))
+    doc_ref.update({
+        'last_period_date': period_date
+    })
 
-#     # Polls the bot
-#     print('Bot is polling...')
-#     app.run_polling()
+async def book_appointment(query: Update):
+    await query.edit_message_text("Please choose your preferred gynaecologist:",
+                                  reply_markup=create_doctor_menu())
+
+def create_doctor_menu():
+    keyboard = [
+        [InlineKeyboardButton("Dr. Ayesha Begum", callback_data='book_dr_ayesha')],
+        [InlineKeyboardButton("Dr. Humayra Akter", callback_data='book_dr_humayra')],
+        [InlineKeyboardButton("Dr. Safina Karim", callback_data='book_dr_safina')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+async def handle_doctor_selection(query: Update, doctor_name: str):
+    await query.edit_message_text(f"Your appointment with {doctor_name} has been successfully booked!")
+
+async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(f'Update {update} caused error {context.error}')        
+
+if __name__ == '__main__':
+    app = Application.builder().token(TOKEN).build()
+
+    # Commands
+    app.add_handler(CommandHandler('start', start_command))
+
+    # Handle all text messages
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+
+    # Callback handler for inline buttons
+    app.add_handler(CallbackQueryHandler(button_callback))
+
+    # Errors
+    app.add_error_handler(error)
+
+    # Polls the bot
+    print('Bot is polling...')
+    app.run_polling()
+
