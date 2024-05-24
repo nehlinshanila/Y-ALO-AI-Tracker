@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/bg_gradient_default">
+
+    <Button
+        android:id="@+id/btnBookAppointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BOOK APPOINTMENT"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/btnCycleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEW CYCLE INFO"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/btnDeleteAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE ACCOUNT"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>
