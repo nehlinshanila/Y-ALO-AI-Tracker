@@ -1,0 +1,6 @@
+com.example.period.test.app-core-1.5.0-0 C:\Users\nehli\.gradle\caches\transforms-4\287518c6305c0d4f1bc10e23581e3928\transformed\core-1.5.0\res
+com.example.period.test.app-annotation-experimental-1.4.0-1 C:\Users\nehli\.gradle\caches\transforms-4\f1b8a9ca3c57200fcba29d2c5f79ee4b\transformed\annotation-experimental-1.4.0\res
+com.example.period.test.app-androidTest-2 D:\CSE\hackathon\Android Application\app\build\generated\res\resValues\androidTest\debug
+com.example.period.test.app-mergeDebugAndroidTestResources-3 D:\CSE\hackathon\Android Application\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.period.test.app-mergeDebugAndroidTestResources-4 D:\CSE\hackathon\Android Application\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.period.test.app-debugAndroidTest-5 D:\CSE\hackathon\Android Application\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
